@@ -1,0 +1,49 @@
+" Fix the issue that Error detected while processing function UnBundle
+if !exists("g:bundles")
+    let g:bundles=g:vundle#bundles
+endif
+
+set guifont=Monaco:h18
+
+let g:ruby_debugger_progname = 'mvim'
+
+"set smartindent
+"set tabstop=2
+"set shiftwidth=2
+"set expandtab
+"set softtabstop=2
+
+colorscheme solarized
+"colorscheme ir_black
+
+"set tags+=/Users/gsun/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/*/tags
+set foldmethod=syntax
+"let ruby_fold=1
+
+set shell=/bin/zsh
+
+
+set nospell
+au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_us
+
+"if !empty($MY_RUBY_HOME)
+"    let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/rubysite_ruby/*'),"\n"),',')
+"endif
+
+" ruby path if you are using rbenv
+" or it will too long to start ruby
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
+autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
+
+" node config
+set runtimepath^=~/.vim/bundle/node
+" Indent specified HTML tags
+let g:html_indent_inctags = "html,body,head,tbody"
+
+" Don't set tmuxline to airline theme when vim started
+let g:airline#extensions#tmuxline#enabled = 0
+
+" Regenerage ctags on save
+" au BufWritePost *.go silent! !ctags -R &
+
