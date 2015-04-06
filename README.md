@@ -1,4 +1,5 @@
-### My dot files collection
+### Dot files
+My dot files collection for OS X and Ubuntu Linux.
 
 #### zsh
 My favorite zsh configuration collection is [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh).
